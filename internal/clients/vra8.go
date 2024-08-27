@@ -15,7 +15,7 @@ import (
 
 	"github.com/crossplane/upjet/pkg/terraform"
 
-	"github.com/vmware/provider-vra8/apis/v1beta1"
+	"github.com/therandombyte/provider-vra8/apis/v1beta1"
 )
 
 const (
@@ -28,8 +28,8 @@ const (
 )
 
 const (
-	keyURL          = "vra_url"
-	keyRefreshToken = "vra_refresh_token"
+	keyURL          = "url"
+	keyRefreshToken = "refresh_token"
 )
 
 // TerraformSetupBuilder builds Terraform a terraform.SetupFn function which

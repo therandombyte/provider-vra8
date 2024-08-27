@@ -1,4 +1,4 @@
-module github.com/vmware/provider-vra8
+module github.com/therandombyte/provider-vra8
 
 go 1.21
 

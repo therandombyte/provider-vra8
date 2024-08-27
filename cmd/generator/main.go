@@ -11,7 +11,7 @@ import (
 
 	"github.com/crossplane/upjet/pkg/pipeline"
 
-	"github.com/vmware/provider-vra8/config"
+	"github.com/therandombyte/provider-vra8/config"
 )
 
 func main() {

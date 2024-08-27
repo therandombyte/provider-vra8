@@ -29,12 +29,12 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 	"sigs.k8s.io/controller-runtime/pkg/metrics"
 
-	"github.com/vmware/provider-vra8/apis"
-	"github.com/vmware/provider-vra8/apis/v1alpha1"
-	"github.com/vmware/provider-vra8/config"
-	"github.com/vmware/provider-vra8/internal/clients"
-	"github.com/vmware/provider-vra8/internal/controller"
-	"github.com/vmware/provider-vra8/internal/features"
+	"github.com/therandombyte/provider-vra8/apis"
+	"github.com/therandombyte/provider-vra8/apis/v1alpha1"
+	"github.com/therandombyte/provider-vra8/config"
+	"github.com/therandombyte/provider-vra8/internal/clients"
+	"github.com/therandombyte/provider-vra8/internal/controller"
+	"github.com/therandombyte/provider-vra8/internal/features"
 )
 
 func main() {

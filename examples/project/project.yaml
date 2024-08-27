@@ -1,0 +1,10 @@
+apiVersion: project.vmware.vra/v1alpha1
+kind: Project
+metadata:
+  name: default
+spec:
+  forProvider:
+    name: 'test-project-24'
+    description: 'test-project-1 - alpcan - caner'
+  providerConfigRef:
+    name: default

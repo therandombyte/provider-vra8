@@ -13,7 +13,7 @@ import (
 
 // Package type metadata.
 const (
-	Group   = "template.upbound.io"
+	Group   = "vra8.vmware.vra"
 	Version = "v1beta1"
 )
 

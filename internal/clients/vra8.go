@@ -15,7 +15,7 @@ import (
 
 	"github.com/crossplane/upjet/pkg/terraform"
 
-	"github.com/upbound/upjet-provider-template/apis/v1beta1"
+	"github.com/vmware/provider-vra8/apis/v1beta1"
 )
 
 const (
@@ -24,7 +24,12 @@ const (
 	errGetProviderConfig    = "cannot get referenced ProviderConfig"
 	errTrackUsage           = "cannot track ProviderConfig usage"
 	errExtractCredentials   = "cannot extract credentials"
-	errUnmarshalCredentials = "cannot unmarshal template credentials as JSON"
+	errUnmarshalCredentials = "cannot unmarshal vra8 credentials as JSON"
+)
+
+const (
+	keyURL          = "vra_url"
+	keyRefreshToken = "vra_refresh_token"
 )
 
 // TerraformSetupBuilder builds Terraform a terraform.SetupFn function which
@@ -60,6 +65,14 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 		creds := map[string]string{}
 		if err := json.Unmarshal(data, &creds); err != nil {
 			return ps, errors.Wrap(err, errUnmarshalCredentials)
+		}
+
+		ps.Configuration = map[string]interface{}{}
+		if v, ok := creds[keyURL]; ok {
+			ps.Configuration[keyURL] = v
+		}
+		if v, ok := creds[keyRefreshToken]; ok {
+			ps.Configuration[keyRefreshToken] = v
 		}
 
 		// Set credentials in Terraform provider configuration.
